@@ -128,6 +128,28 @@
         box-shadow: 0 4px 14px rgba(43, 42, 40, 0.08);
     }
 
+    .scene-links {
+        display: flex;
+        gap: 0.8em;
+        margin-top: 0.8em;
+    }
+
+    .scene-links a {
+        padding: 0.5em 1.2em;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        text-decoration: none;
+        color: #fff;
+        background: var(--terracotta);
+        font-size: 0.9em;
+        font-weight: 600;
+        transition: background 0.15s;
+    }
+
+    .scene-links a:hover {
+        background: var(--terracotta-dark);
+    }
+
     .pano {
         width: 100%;
         height: 380px;
@@ -234,6 +256,10 @@
             <div class="pano-card">
                 <div id="tour" class="pano" style="height: 520px;"></div>
             </div>
+            <div class="scene-links">
+                <a href="#" onclick="tourViewer.loadScene('sala'); return false;">Sala</a>
+                <a href="#" onclick="tourViewer.loadScene('ingresso'); return false;">Ingresso</a>
+            </div>
         </section>
     </div>
 
@@ -285,12 +311,12 @@
 
         var tourViewer = pannellum.viewer('tour', {
             default: {
-                firstScene: 'scene1',
+                firstScene: 'sala',
                 autoLoad: true,
                 sceneFadeDuration: 800
             },
             scenes: {
-                scene1: {
+                ingresso: {
                     type: 'equirectangular',
                     panorama: 'SALA/3D/CAM_20260808130901_0294_D.JPG',
                     yaw: -50,
@@ -299,13 +325,13 @@
                             pitch: 0,
                             yaw: -90,
                             type: 'scene',
-                            sceneId: 'scene2',
+                            sceneId: 'sala',
                             text: 'Sala',
                             pitch: -8,
                         }
                     ]
                 },
-                scene2: {
+                sala: {
                     type: 'equirectangular',
                     panorama: 'SALA/3D/CAM_20260808130928_0295_D.JPG',
                     yaw: 180,
@@ -314,7 +340,7 @@
                             pitch: 0,
                             yaw: 105,
                             type: 'scene',
-                            sceneId: 'scene1',
+                            sceneId: 'ingresso',
                             text: 'Ingresso',
                             pitch: -10,
                         }
