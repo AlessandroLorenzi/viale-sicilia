@@ -1,0 +1,328 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Foto Casa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<style>
+    :root {
+        --cream: #faf6f1;
+        --card: #ffffff;
+        --charcoal: #2b2a28;
+        --terracotta: #c1653b;
+        --terracotta-dark: #a5502c;
+        --muted: #8a8378;
+        --border: #ece5db;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--charcoal);
+        font-family: 'Inter', sans-serif;
+    }
+
+    .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 3em 1.5em 5em;
+    }
+
+    header.hero {
+        text-align: center;
+        margin-bottom: 3em;
+    }
+
+    header.hero .tag {
+        display: inline-block;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        color: var(--terracotta);
+        font-weight: 600;
+        margin-bottom: 0.75em;
+    }
+
+    header.hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.6em;
+        margin: 0;
+        color: var(--charcoal);
+    }
+
+    section {
+        margin-bottom: 3.5em;
+    }
+
+    section h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.6em;
+        margin: 0 0 0.2em;
+        color: var(--charcoal);
+    }
+
+    section h3 {
+        font-size: 0.95em;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 0 0 1.2em;
+    }
+
+    .divider {
+        width: 48px;
+        height: 3px;
+        background: var(--terracotta);
+        border: none;
+        border-radius: 2px;
+        margin: 0.9em 0 1.6em;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.2em;
+    }
+
+    .gallery .thumb-card {
+        border-radius: 14px;
+        overflow: hidden;
+        cursor: pointer;
+        aspect-ratio: 4 / 3;
+        box-shadow: 0 4px 14px rgba(43, 42, 40, 0.1);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery .thumb-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(43, 42, 40, 0.18);
+    }
+
+    .gallery .thumb-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .pano-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.4em;
+    }
+
+    .pano-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 0.6em;
+        box-shadow: 0 4px 14px rgba(43, 42, 40, 0.08);
+    }
+
+    .pano {
+        width: 100%;
+        height: 380px;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(20, 18, 16, 0.92);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lightbox.open {
+        display: flex;
+    }
+
+    .lightbox img {
+        max-width: 88%;
+        max-height: 88%;
+        border-radius: 8px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox .close,
+    .lightbox .prev,
+    .lightbox .next {
+        position: absolute;
+        color: #f5efe8;
+        font-size: 2.2em;
+        cursor: pointer;
+        user-select: none;
+        background: rgba(255, 255, 255, 0.08);
+        border: none;
+        border-radius: 50%;
+        width: 1.8em;
+        height: 1.8em;
+        line-height: 1.8em;
+        text-align: center;
+        transition: background 0.2s ease;
+    }
+
+    .lightbox .close:hover,
+    .lightbox .prev:hover,
+    .lightbox .next:hover {
+        background: rgba(255, 255, 255, 0.18);
+    }
+
+    .lightbox .close {
+        top: 1em;
+        right: 1em;
+        font-size: 1.6em;
+    }
+
+    .lightbox .prev {
+        left: 1em;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .lightbox .next {
+        right: 1em;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+</style>
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <span class="tag">Trilocale in Viale Sicilia 4, Busto Arsizio</span>
+            <h1>Sala</h1>
+        </header>
+
+        <section>
+            <h2>Foto Set 1</h2>
+            <hr class="divider" />
+            <div class="gallery">
+                <div class="thumb-card" onclick="openLightbox(0)"><img src="SALA/DSC00510.JPG" /></div>
+                <div class="thumb-card" onclick="openLightbox(1)"><img src="SALA/DSC00511.JPG" /></div>
+                <div class="thumb-card" onclick="openLightbox(2)"><img src="SALA/DSC00513.JPG" /></div>
+                <div class="thumb-card" onclick="openLightbox(3)"><img src="SALA/DSC00515.JPG" /></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Foto Set 2</h2>
+            <hr class="divider" />
+            <div class="gallery">
+                <div class="thumb-card" onclick="openLightbox(4)"><img src="SALA/CAM_20260808143547_0301_D.JPG" /></div>
+                <div class="thumb-card" onclick="openLightbox(5)"><img src="SALA/CAM_20260808143626_0302_D.JPG" /></div>
+                <div class="thumb-card" onclick="openLightbox(6)"><img src="SALA/CAM_20260808143700_0303_D.JPG" /></div>
+                <div class="thumb-card" onclick="openLightbox(7)"><img src="SALA/CAM_20260808143755_0304_D.JPG" /></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Virtual tour</h2>
+            <hr class="divider" />
+            <div class="pano-card">
+                <div id="tour" class="pano" style="height: 520px;"></div>
+            </div>
+        </section>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <button class="close" onclick="closeLightbox()">&times;</button>
+        <button class="prev" onclick="showDelta(-1)">&#8249;</button>
+        <img id="lightbox-img" src="" />
+        <button class="next" onclick="showDelta(1)">&#8250;</button>
+    </div>
+
+    <script>
+        var photos = [
+            'SALA/DSC00510.JPG',
+            'SALA/DSC00511.JPG',
+            'SALA/DSC00513.JPG',
+            'SALA/DSC00515.JPG',
+            'SALA/CAM_20260808143547_0301_D.JPG',
+            'SALA/CAM_20260808143626_0302_D.JPG',
+            'SALA/CAM_20260808143700_0303_D.JPG',
+            'SALA/CAM_20260808143755_0304_D.JPG'
+        ];
+        var currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox-img').src = photos[currentIndex];
+            document.getElementById('lightbox').classList.add('open');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+        }
+
+        function showDelta(delta) {
+            currentIndex = (currentIndex + delta + photos.length) % photos.length;
+            document.getElementById('lightbox-img').src = photos[currentIndex];
+        }
+
+        document.getElementById('lightbox').addEventListener('click', function (e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (!document.getElementById('lightbox').classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showDelta(-1);
+            if (e.key === 'ArrowRight') showDelta(1);
+        });
+
+        var tourViewer = pannellum.viewer('tour', {
+            default: {
+                firstScene: 'scene1',
+                autoLoad: true,
+                sceneFadeDuration: 800
+            },
+            scenes: {
+                scene1: {
+                    type: 'equirectangular',
+                    panorama: 'SALA/3D/CAM_20260808130901_0294_D.JPG',
+                    yaw: -50,
+                    hotSpots: [
+                        {
+                            pitch: 0,
+                            yaw: -90,
+                            type: 'scene',
+                            sceneId: 'scene2',
+                            text: 'Sala',
+                            pitch: -10,
+                        }
+                    ]
+                },
+                scene2: {
+                    type: 'equirectangular',
+                    panorama: 'SALA/3D/CAM_20260808130928_0295_D.JPG',
+                    yaw: 180,
+                    hotSpots: [
+                        {
+                            pitch: 0,
+                            yaw: 105,
+                            type: 'scene',
+                            sceneId: 'scene1',
+                            text: 'Ingresso',
+                            pitch: -10,
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
