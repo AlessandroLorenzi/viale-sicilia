@@ -1,0 +1,133 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Virtual tour — Viale Sicilia 4</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+        font-family: 'Inter', sans-serif;
+    }
+
+    #tour {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .scene-links {
+        position: fixed;
+        left: 50%;
+        bottom: 1.5em;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.8em;
+        z-index: 10;
+    }
+
+    .scene-links a {
+        padding: 0.5em 1.2em;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #fff;
+        background: rgba(20, 18, 16, 0.65);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        font-size: 0.9em;
+        font-weight: 600;
+        backdrop-filter: blur(4px);
+        transition: background 0.15s;
+    }
+
+    .scene-links a:hover {
+        background: rgba(193, 101, 59, 0.85);
+    }
+</style>
+</head>
+<body>
+    <div id="tour"></div>
+
+    <div class="scene-links">
+        <a href="#" onclick="tourViewer.loadScene('sala'); return false;">Sala</a>
+        <a href="#" onclick="tourViewer.loadScene('ingresso'); return false;">Ingresso</a>
+        <a href="#" onclick="tourViewer.loadScene('camera-letto'); return false;">Camera da letto</a>
+        <a href="#" onclick="tourViewer.loadScene('balcone-camera-letto'); return false;">Balcone camera da letto</a>
+    </div>
+
+    <script>
+        var tourViewer = pannellum.viewer('tour', {
+            default: {
+                firstScene: 'sala',
+                autoLoad: true,
+                sceneFadeDuration: 800
+            },
+            scenes: {
+                ingresso: {
+                    type: 'equirectangular',
+                    panorama: '../SALA/PANORAMA/CAM_20260808130901_0294_D.JPG',
+                    yaw: -50,
+                    hotSpots: [
+                        {
+                            pitch: -8,
+                            yaw: -90,
+                            type: 'scene',
+                            sceneId: 'sala',
+                            text: 'Sala'
+                        },
+                        {
+                            pitch: -3.4144222449052872,
+                            yaw: 104.06011050517816,
+                            type: 'scene',
+                            sceneId: 'camera-letto',
+                            text: 'Camera da letto'
+                        }
+                    ]
+                },
+                sala: {
+                    type: 'equirectangular',
+                    panorama: '../SALA/PANORAMA/CAM_20260808130928_0295_D.JPG',
+                    yaw: 165.16358969916212,
+                    hotSpots: [
+                        {
+                            pitch: -10,
+                            yaw: 105,
+                            type: 'scene',
+                            sceneId: 'ingresso',
+                            text: 'Ingresso'
+                        }
+                    ]
+                },
+                'balcone-camera-letto': {
+                    type: 'equirectangular',
+                    panorama: '../CAMERA_DA_LETTO/PANORAMA/compose_video_1787128965712.JPG',
+                    yaw: -75.75296535392698
+                },
+                'camera-letto': {
+                    type: 'equirectangular',
+                    panorama: '../CAMERA_DA_LETTO/PANORAMA/compose_video_1787130177340.jpg',
+                    yaw: -99.68385438129792,
+                    hotSpots: [
+                        {
+                            pitch: 0,
+                            yaw: -111.71172598623036,
+                            type: 'scene',
+                            sceneId: 'balcone-camera-letto',
+                            text: 'Balcone'
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
