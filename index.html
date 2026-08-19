@@ -15,6 +15,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
 <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <style>
     :root {
         --cream: #faf6f1;
@@ -94,30 +96,35 @@
         margin: 0.9em 0 1.6em;
     }
 
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 260px));
-        gap: 1.2em;
+    .mosaic {
+        margin: 0 -0.6em;
     }
 
-    .gallery .thumb-card {
+    .mosaic-sizer,
+    .mosaic-item {
+        width: 32%;
+    }
+
+    .mosaic-gutter-sizer {
+        width: 2%;
+    }
+
+    .mosaic-item {
+        margin-bottom: 1.2em;
         border-radius: 14px;
         overflow: hidden;
         cursor: pointer;
-        aspect-ratio: 4 / 3;
         box-shadow: 0 4px 14px rgba(43, 42, 40, 0.1);
         transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .gallery .thumb-card:hover {
+    .mosaic-item:hover {
         transform: translateY(-4px);
         box-shadow: 0 10px 24px rgba(43, 42, 40, 0.18);
     }
 
-    .gallery .thumb-card img {
+    .mosaic-item img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
         display: block;
     }
 
@@ -236,32 +243,18 @@
         </header>
 
         <section>
-            <h2>Sala</h2>
-            <hr class="divider" />
-            <div class="gallery">
-                <div class="thumb-card" onclick="openLightbox(0)"><img src="SALA/CAM_20260808143547_0301_D.JPG" /></div>
-                <div class="thumb-card" onclick="openLightbox(1)"><img src="SALA/CAM_20260808143626_0302_D.JPG" /></div>
-                <div class="thumb-card" onclick="openLightbox(2)"><img src="SALA/CAM_20260808143700_0303_D.JPG" /></div>
-                <div class="thumb-card" onclick="openLightbox(3)"><img src="SALA/CAM_20260808143755_0304_D.JPG" /></div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Corridoio</h2>
-            <hr class="divider" />
-            <div class="gallery">
-                <div class="thumb-card" onclick="openLightbox(4)"><img src="CORRIDOIO/compose_video_1787133616953.JPG" /></div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Camera da letto</h2>
-            <hr class="divider" />
-            <div class="gallery">
-                <div class="thumb-card" onclick="openLightbox(5)"><img src="CAMERA_DA_LETTO/compose_video_1787129033671.JPG" /></div>
-                <div class="thumb-card" onclick="openLightbox(6)"><img src="CAMERA_DA_LETTO/compose_video_1787129014474.JPG" /></div>
-                <div class="thumb-card" onclick="openLightbox(7)"><img src="CAMERA_DA_LETTO/compose_video_1787128954237.JPG" /></div>
-                <div class="thumb-card" onclick="openLightbox(8)"><img src="CAMERA_DA_LETTO/compose_video_1787129244158.JPG" /></div>
+            <div class="mosaic">
+                <div class="mosaic-sizer"></div>
+                <div class="mosaic-gutter-sizer"></div>
+                <div class="mosaic-item" onclick="openLightbox(0)"><img src="SALA/CAM_20260808143547_0301_D.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(1)"><img src="SALA/CAM_20260808143626_0302_D.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(2)"><img src="SALA/CAM_20260808143700_0303_D.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(3)"><img src="SALA/CAM_20260808143755_0304_D.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(4)"><img src="CORRIDOIO/compose_video_1787133616953.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(5)"><img src="CAMERA_DA_LETTO/compose_video_1787129033671.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(6)"><img src="CAMERA_DA_LETTO/compose_video_1787129014474.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(7)"><img src="CAMERA_DA_LETTO/compose_video_1787128954237.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(8)"><img src="CAMERA_DA_LETTO/compose_video_1787129244158.JPG" /></div>
             </div>
         </section>
 
@@ -330,6 +323,16 @@
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowLeft') showDelta(-1);
             if (e.key === 'ArrowRight') showDelta(1);
+        });
+
+        var mosaicGrid = document.querySelector('.mosaic');
+        imagesLoaded(mosaicGrid, function () {
+            new Masonry(mosaicGrid, {
+                itemSelector: '.mosaic-item',
+                columnWidth: '.mosaic-sizer',
+                gutter: '.mosaic-gutter-sizer',
+                percentPosition: true
+            });
         });
 
         var tourViewer = pannellum.viewer('tour', {
