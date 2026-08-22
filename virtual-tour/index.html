@@ -62,6 +62,7 @@
         <a href="#" onclick="tourViewer.loadScene('corridoio'); return false;">Corridoio</a>
         <a href="#" onclick="tourViewer.loadScene('camera-letto'); return false;">Camera da letto</a>
         <a href="#" onclick="tourViewer.loadScene('balcone-camera-letto'); return false;">Balcone camera da letto</a>
+        <a href="#" onclick="tourViewer.loadScene('studio'); return false;">Studio</a>
     </div>
 
     <script>
@@ -111,6 +112,28 @@
                             type: 'scene',
                             sceneId: 'camera-letto',
                             text: 'Camera da letto'
+                        },
+                        {
+                            pitch: 0,
+                            yaw: -60,
+                            type: 'scene',
+                            sceneId: 'studio',
+                            text: 'Studio'
+                        }
+                    ]
+                },
+                studio: {
+                    type: 'equirectangular',
+                    panorama: '../STUDIO/PANORAMA/compose_video_1787398914704.JPG',
+                    yaw: -165.32518171767583,
+                    pitch: -14,
+                    hotSpots: [
+                        {
+                            pitch: 0,
+                            yaw: 87,
+                            type: 'scene',
+                            sceneId: 'corridoio',
+                            text: 'Corridoio'
                         }
                     ]
                 },

@@ -255,6 +255,10 @@
                 <div class="mosaic-item" onclick="openLightbox(6)"><img src="CAMERA_DA_LETTO/compose_video_1787129014474.JPG" /></div>
                 <div class="mosaic-item" onclick="openLightbox(7)"><img src="CAMERA_DA_LETTO/compose_video_1787128954237.JPG" /></div>
                 <div class="mosaic-item" onclick="openLightbox(8)"><img src="CAMERA_DA_LETTO/compose_video_1787129244158.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(9)"><img src="STUDIO/compose_video_1787398863069.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(10)"><img src="STUDIO/compose_video_1787398892337.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(11)"><img src="BAGNO/compose_video_1787401301884.JPG" /></div>
+                <div class="mosaic-item" onclick="openLightbox(12)"><img src="BAGNO/compose_video_1787401351917.JPG" /></div>
             </div>
         </section>
 
@@ -271,6 +275,7 @@
                 <a href="#" onclick="tourViewer.loadScene('corridoio'); return false;">Corridoio</a>
                 <a href="#" onclick="tourViewer.loadScene('camera-letto'); return false;">Camera da letto</a>
                 <a href="#" onclick="tourViewer.loadScene('balcone-camera-letto'); return false;">Balcone camera da letto</a>
+                <a href="#" onclick="tourViewer.loadScene('studio'); return false;">Studio</a>
             </div>
             <div class="scene-links">
                 <a href="virtual-tour/">Apri a schermo intero</a>
@@ -295,7 +300,11 @@
             'CAMERA_DA_LETTO/compose_video_1787129033671.JPG',
             'CAMERA_DA_LETTO/compose_video_1787129014474.JPG',
             'CAMERA_DA_LETTO/compose_video_1787128954237.JPG',
-            'CAMERA_DA_LETTO/compose_video_1787129244158.JPG'
+            'CAMERA_DA_LETTO/compose_video_1787129244158.JPG',
+            'STUDIO/compose_video_1787398863069.JPG',
+            'STUDIO/compose_video_1787398892337.JPG',
+            'BAGNO/compose_video_1787401301884.JPG',
+            'BAGNO/compose_video_1787401351917.JPG'
         ];
         var currentIndex = 0;
 
@@ -382,6 +391,28 @@
                             type: 'scene',
                             sceneId: 'camera-letto',
                             text: 'Camera da letto',
+                        },
+                        {
+                            pitch: 0,
+                            yaw: -60,
+                            type: 'scene',
+                            sceneId: 'studio',
+                            text: 'Studio',
+                        }
+                    ]
+                },
+                studio: {
+                    type: 'equirectangular',
+                    panorama: 'STUDIO/PANORAMA/compose_video_1787398914704.JPG',
+                    yaw: -165.32518171767583,
+                    pitch: -14,
+                    hotSpots: [
+                        {
+                            pitch: 0,
+                            yaw: 87,
+                            type: 'scene',
+                            sceneId: 'corridoio',
+                            text: 'Corridoio',
                         }
                     ]
                 },
