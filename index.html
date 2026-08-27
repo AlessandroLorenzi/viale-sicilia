@@ -285,6 +285,9 @@
     }
 
     .listing-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
         padding: 0.5em 1.2em;
         border: 1px solid var(--terracotta);
         border-radius: 8px;
@@ -294,6 +297,12 @@
         font-size: 0.9em;
         font-weight: 600;
         transition: background 0.15s, color 0.15s;
+    }
+
+    .listing-links .link-icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 3px;
     }
 
     .listing-links a:hover {
@@ -386,8 +395,8 @@
         <header class="hero">
             <h1>Casa in Vendita - Viale Sicilia 4, Busto Arsizio 21052 VA</h1>
             <div class="listing-links">
-                <a href="https://casavo.com/it/annuncio/64812/" target="_blank" rel="noopener">Annuncio su Casavo</a>
-                <a href="https://www.immobiliare.it/annunci/131929562" target="_blank" rel="noopener">Annuncio su Immobiliare.it</a>
+                <a href="https://casavo.com/it/annuncio/64812/" target="_blank" rel="noopener"><img class="link-icon" src="https://www.google.com/s2/favicons?domain=casavo.com&sz=32" alt="" />Casavo</a>
+                <a href="https://www.immobiliare.it/annunci/131929562" target="_blank" rel="noopener"><img class="link-icon" src="https://www.google.com/s2/favicons?domain=immobiliare.it&sz=32" alt="" />Immobiliare</a>
             </div>
         </header>
 
