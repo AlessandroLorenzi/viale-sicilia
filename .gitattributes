@@ -4,4 +4,3 @@
 *.JPEG filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
 *.PNG filter=lfs diff=lfs merge=lfs -text
-foto.zip filter=lfs diff=lfs merge=lfs -text
