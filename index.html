@@ -1,11 +1,13 @@
-<html>
+<html lang="it">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Foto Casa</title>
+<title>Casa in Vendita - Viale Sicilia 4, Busto Arsizio 21052 VA</title>
+<meta name="description" content="Trilocale di 83 mq in vendita a Busto Arsizio, zona San Michele: cucina a vista, due camere, studio, balconi, box auto e cantina. Prezzo 121.000 €." />
+<link rel="canonical" href="https://alessandrolorenzi.github.io/viale-sicilia/" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Trilocale in Viale Sicilia 4, Busto Arsizio" />
-<meta property="og:description" content="Foto e virtual tour del trilocale in Viale Sicilia 4, Busto Arsizio." />
+<meta property="og:title" content="Casa in Vendita - Viale Sicilia 4, Busto Arsizio 21052 VA" />
+<meta property="og:description" content="Trilocale di 83 mq in vendita a Busto Arsizio, zona San Michele: cucina a vista, due camere, studio, balconi, box auto e cantina. Prezzo 121.000 €." />
 <meta property="og:image" content="https://alessandrolorenzi.github.io/viale-sicilia/opengraph.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -19,6 +21,43 @@
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "SingleFamilyResidence",
+    "name": "Trilocale in Viale Sicilia 4, Busto Arsizio",
+    "description": "Trilocale di 83 mq in vendita a Busto Arsizio, zona San Michele: cucina a vista, due camere, studio, balconi, box auto e cantina.",
+    "url": "https://alessandrolorenzi.github.io/viale-sicilia/",
+    "image": "https://alessandrolorenzi.github.io/viale-sicilia/opengraph.jpg",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Viale Sicilia 4",
+        "addressLocality": "Busto Arsizio",
+        "postalCode": "21052",
+        "addressRegion": "VA",
+        "addressCountry": "IT"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.608316,
+        "longitude": 8.832074
+    },
+    "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 83,
+        "unitCode": "MTK"
+    },
+    "numberOfRooms": 3,
+    "numberOfBedrooms": 2,
+    "numberOfBathroomsTotal": 1,
+    "offers": {
+        "@type": "Offer",
+        "price": 121000,
+        "priceCurrency": "EUR",
+        "url": "https://casavo.com/it/annuncio/64812/"
+    }
+}
+</script>
 <style>
     :root {
         --cream: #faf6f1;
@@ -62,7 +101,8 @@
         margin-bottom: 0.75em;
     }
 
-    header.hero h1 {
+    header.hero h1,
+    header.hero h2 {
         font-family: 'Playfair Display', serif;
         font-size: 2.6em;
         margin: 0;
@@ -344,8 +384,7 @@
         <img class="cover" src="SALA/CAM_20260808143547_0301_D.JPG" alt="Cucina a vista con elettrodomestici in acciaio e piano cottura a induzione" />
 
         <header class="hero">
-            <span class="tag">Trilocale in Viale Sicilia 4, Busto Arsizio</span>
-            <h1>Foto</h1>
+            <h1>Casa in Vendita - Viale Sicilia 4, Busto Arsizio 21052 VA</h1>
             <div class="listing-links">
                 <a href="https://casavo.com/it/annuncio/64812/" target="_blank" rel="noopener">Annuncio su Casavo</a>
                 <a href="https://www.immobiliare.it/annunci/131929562" target="_blank" rel="noopener">Annuncio su Immobiliare.it</a>
@@ -354,7 +393,7 @@
 
         <section>
             <header class="hero">
-                <h1>Descrizione</h1>
+                <h2>Descrizione</h2>
             </header>
             <div class="description">
                 <p>Trilocale luminoso e moderno in vendita a Busto Arsizio, zona San Michele.</p>
@@ -371,32 +410,35 @@
         </section>
 
         <section>
+            <header class="hero">
+                <h2>Foto</h2>
+            </header>
             <div class="mosaic">
                 <div class="mosaic-sizer"></div>
                 <div class="mosaic-gutter-sizer"></div>
-                <div class="mosaic-item" onclick="openLightbox(0)"><img src="SALA/CAM_20260808143547_0301_D.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(1)"><img src="SALA/CAM_20260808143626_0302_D.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(2)"><img src="SALA/CAM_20260808143700_0303_D.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(3)"><img src="SALA/CAM_20260808143755_0304_D.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(4)"><img src="CORRIDOIO/compose_video_1787133616953.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(5)"><img src="CAMERA_DA_LETTO/compose_video_1787129033671.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(6)"><img src="CAMERA_DA_LETTO/compose_video_1787129014474.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(7)"><img src="CAMERA_DA_LETTO/compose_video_1787128954237.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(8)"><img src="CAMERA_DA_LETTO/compose_video_1787129244158.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(9)"><img src="STUDIO/compose_video_1787398863069.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(10)"><img src="STUDIO/compose_video_1787398892337.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(11)"><img src="BAGNO/compose_video_1787401301884.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(12)"><img src="BAGNO/compose_video_1787401351917.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(13)"><img src="CANTINA/compose_video_1787575263855.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(14)"><img src="GARAGE/compose_video_1787575222377.JPG" /></div>
-                <div class="mosaic-item" onclick="openLightbox(15)"><img src="ESTERNO/IMG_20260824_143244466_HDR.jpg" /></div>
-                <div class="mosaic-item" onclick="openLightbox(16)"><img src="ESTERNO/IMG_20260824_180645376_HDR.jpg" /></div>
+                <div class="mosaic-item" onclick="openLightbox(0)"><img src="SALA/CAM_20260808143547_0301_D.JPG" alt="Cucina a vista con elettrodomestici in acciaio e piano cottura a induzione" /></div>
+                <div class="mosaic-item" onclick="openLightbox(1)"><img src="SALA/CAM_20260808143626_0302_D.JPG" alt="Soggiorno con tavolo da pranzo, divano e porta finestra sul balcone" /></div>
+                <div class="mosaic-item" onclick="openLightbox(2)"><img src="SALA/CAM_20260808143700_0303_D.JPG" alt="Ingresso con porta blindata e porta di un ripostiglio" /></div>
+                <div class="mosaic-item" onclick="openLightbox(3)"><img src="SALA/CAM_20260808143755_0304_D.JPG" alt="Balcone del soggiorno con vista sul verde e unità esterna del climatizzatore" /></div>
+                <div class="mosaic-item" onclick="openLightbox(4)"><img src="CORRIDOIO/compose_video_1787133616953.JPG" alt="Corridoio con zona lavanderia, scaldabagno e accesso alle camere" /></div>
+                <div class="mosaic-item" onclick="openLightbox(5)"><img src="CAMERA_DA_LETTO/compose_video_1787129033671.JPG" alt="Camera da letto matrimoniale con parete verde e accesso al balcone" /></div>
+                <div class="mosaic-item" onclick="openLightbox(6)"><img src="CAMERA_DA_LETTO/compose_video_1787129014474.JPG" alt="Camera da letto con armadio a muro e scrivania" /></div>
+                <div class="mosaic-item" onclick="openLightbox(7)"><img src="CAMERA_DA_LETTO/compose_video_1787128954237.JPG" alt="Vista dal balcone della camera da letto sul quartiere" /></div>
+                <div class="mosaic-item" onclick="openLightbox(8)"><img src="CAMERA_DA_LETTO/compose_video_1787129244158.JPG" alt="Balcone della camera da letto con tenda da sole" /></div>
+                <div class="mosaic-item" onclick="openLightbox(9)"><img src="STUDIO/compose_video_1787398863069.JPG" alt="Studio con scrivania, divano letto e finestra" /></div>
+                <div class="mosaic-item" onclick="openLightbox(10)"><img src="STUDIO/compose_video_1787398892337.JPG" alt="Studio arredato con chitarre a parete, scrivania e divano letto" /></div>
+                <div class="mosaic-item" onclick="openLightbox(11)"><img src="BAGNO/compose_video_1787401301884.JPG" alt="Bagno con mobile lavabo sospeso e specchio contenitore" /></div>
+                <div class="mosaic-item" onclick="openLightbox(12)"><img src="BAGNO/compose_video_1787401351917.JPG" alt="Bagno finestrato con doccia, sanitari e bidet" /></div>
+                <div class="mosaic-item" onclick="openLightbox(13)"><img src="CANTINA/compose_video_1787575263855.JPG" alt="Cantina con spazio per biciclette, sci e attrezzatura sportiva" /></div>
+                <div class="mosaic-item" onclick="openLightbox(14)"><img src="GARAGE/compose_video_1787575222377.JPG" alt="Box auto con scaffalature e banco da lavoro" /></div>
+                <div class="mosaic-item" onclick="openLightbox(15)"><img src="ESTERNO/IMG_20260824_143244466_HDR.jpg" alt="Facciata del condominio anni '70 con balconi" /></div>
+                <div class="mosaic-item" onclick="openLightbox(16)"><img src="ESTERNO/IMG_20260824_180645376_HDR.jpg" alt="Vista della strada alberata su cui si affaccia il condominio" /></div>
             </div>
         </section>
 
         <section>
             <header class="hero">
-                <h1>Virtual tour</h1>
+                <h2>Virtual tour</h2>
             </header>
             <div class="pano-card">
                 <div id="tour" class="pano" style="height: 520px;"></div>
@@ -416,7 +458,7 @@
 
         <section>
             <header class="hero">
-                <h1>Caratteristiche dell'immobile</h1>
+                <h2>Caratteristiche dell'immobile</h2>
             </header>
 
             <div class="specs-group">
@@ -466,7 +508,7 @@
 
         <section>
             <header class="hero">
-                <h1>Dove si trova</h1>
+                <h2>Dove si trova</h2>
             </header>
             <div class="pano-card">
                 <div id="map"></div>
@@ -477,7 +519,7 @@
     <div id="lightbox" class="lightbox">
         <button class="close" onclick="closeLightbox()">&times;</button>
         <button class="prev" onclick="showDelta(-1)">&#8249;</button>
-        <img id="lightbox-img" src="" />
+        <img id="lightbox-img" src="" alt="" />
         <button class="next" onclick="showDelta(1)">&#8250;</button>
     </div>
 
@@ -503,9 +545,17 @@
         ];
         var currentIndex = 0;
 
+        var mosaicImgs = document.querySelectorAll('.mosaic-item img');
+
+        function updateLightboxImage() {
+            var lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = photos[currentIndex];
+            lightboxImg.alt = mosaicImgs[currentIndex].alt;
+        }
+
         function openLightbox(index) {
             currentIndex = index;
-            document.getElementById('lightbox-img').src = photos[currentIndex];
+            updateLightboxImage();
             document.getElementById('lightbox').classList.add('open');
         }
 
@@ -515,7 +565,7 @@
 
         function showDelta(delta) {
             currentIndex = (currentIndex + delta + photos.length) % photos.length;
-            document.getElementById('lightbox-img').src = photos[currentIndex];
+            updateLightboxImage();
         }
 
         document.getElementById('lightbox').addEventListener('click', function (e) {
