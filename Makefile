@@ -1,5 +1,4 @@
 PORT := 8090
-ROOMS := $(shell find . -maxdepth 1 -type d -not -path . -not -path ./.git -not -path ./.github -not -path ./virtual-tour -printf '%f\n')
 
 .PHONY: run
 run:
@@ -7,4 +6,8 @@ run:
 
 .PHONY: zip
 zip:
-	zip -r foto.zip $(ROOMS)
+	zip -r foto.zip FOTO/ROOMS
+
+.PHONY: thumbnail
+thumbnail:
+	./scripts/generate-thumbnails.sh
