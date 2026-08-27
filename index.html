@@ -233,6 +233,41 @@
         top: 50%;
         transform: translateY(-50%);
     }
+
+    .listing-links {
+        display: flex;
+        justify-content: center;
+        gap: 0.8em;
+        margin-top: 1.4em;
+        flex-wrap: wrap;
+    }
+
+    .listing-links a {
+        padding: 0.5em 1.2em;
+        border: 1px solid var(--terracotta);
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--terracotta);
+        background: transparent;
+        font-size: 0.9em;
+        font-weight: 600;
+        transition: background 0.15s, color 0.15s;
+    }
+
+    .listing-links a:hover {
+        background: var(--terracotta);
+        color: #fff;
+    }
+
+    .description p {
+        line-height: 1.7;
+        margin: 0 0 1.1em;
+        color: var(--charcoal);
+    }
+
+    .description p:last-child {
+        margin-bottom: 0;
+    }
 </style>
 </head>
 <body>
@@ -240,7 +275,29 @@
         <header class="hero">
             <span class="tag">Trilocale in Viale Sicilia 4, Busto Arsizio</span>
             <h1>Foto</h1>
+            <div class="listing-links">
+                <a href="https://casavo.com/it/annuncio/64812/" target="_blank" rel="noopener">Annuncio su Casavo</a>
+                <a href="https://www.immobiliare.it/annunci/131929562" target="_blank" rel="noopener">Annuncio su Immobiliare.it</a>
+            </div>
         </header>
+
+        <section>
+            <header class="hero">
+                <h1>Descrizione</h1>
+            </header>
+            <div class="description">
+                <p>Trilocale luminoso e moderno in vendita a Busto Arsizio, zona San Michele.</p>
+                <p>In un condominio anni '70 ben tenuto, proponiamo in vendita un luminoso trilocale situato al secondo piano, ideale per chi cerca una casa moderna, accogliente e pronta da vivere, in una posizione strategica e ben collegata.</p>
+                <p>La localizzazione risulta particolarmente vantaggiosa: la fermata dell'autobus dista appena due minuti a piedi, mentre il parco circostante è raggiungibile in altrettanto tempo. I servizi di prossimità sono facilmente accessibili, con alimentari e negozi a tre minuti di cammino.</p>
+                <p>Con una metratura di oltre 80 mq, l'appartamento offre spazi ben distribuiti e funzionali. Ristrutturato negli anni scorsi, si presenta fresco, moderno e curato, pronto per essere abitato senza necessità di interventi.</p>
+                <p>La zona giorno è composta da un living con cucina a vista, affacciato sul balcone, perfetto per creare un ambiente conviviale e piacevole.</p>
+                <p>Un comodo corridoio conduce alla zona notte, garantendo una distribuzione ordinata degli ambienti e una piacevole separazione tra la zona giorno e le camere.</p>
+                <p>La zona notte comprende una grande camera matrimoniale con balcone, un bagno finestrato con doccia e una stanza singola o comodo studio, ideale come spazio per lo smart working o ambiente versatile da adattare alle proprie esigenze.</p>
+                <p>Completano la proprietà box auto e cantina, per una soluzione ancora più pratica e completa.</p>
+                <p>La posizione rappresenta un ulteriore punto di forza: l'immobile si trova in una zona di Busto Arsizio ben servita, con servizi, negozi e collegamenti facilmente raggiungibili e comoda per gli spostamenti quotidiani.</p>
+                <p>Non aspettare, prenota la tua visita!</p>
+            </div>
+        </section>
 
         <section>
             <div class="mosaic">
