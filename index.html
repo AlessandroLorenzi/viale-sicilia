@@ -217,6 +217,7 @@
         display: none;
         position: fixed;
         inset: 0;
+        overflow: hidden;
         background: rgba(20, 18, 16, 0.92);
         z-index: 1000;
         align-items: center;
@@ -228,8 +229,12 @@
     }
 
     .lightbox img {
-        max-width: 88%;
-        max-height: 88%;
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 88vw;
+        max-height: 88vh;
+        object-fit: contain;
         border-radius: 8px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
@@ -623,14 +628,21 @@
         L.marker([45.608316, 8.832074]).addTo(map);
 
         var mosaicGrid = document.querySelector('.mosaic');
+        var masonryInstance = null;
         imagesLoaded(mosaicGrid, function () {
-            new Masonry(mosaicGrid, {
+            masonryInstance = new Masonry(mosaicGrid, {
                 itemSelector: '.mosaic-item',
                 columnWidth: '.mosaic-sizer',
                 gutter: '.mosaic-gutter-sizer',
                 percentPosition: true
             });
         });
+
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener('resize', function () {
+                if (masonryInstance) masonryInstance.layout();
+            });
+        }
 
         var tourViewer = pannellum.viewer('tour', {
             default: {
