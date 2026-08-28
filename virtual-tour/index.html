@@ -51,6 +51,57 @@
     .scene-links a:hover {
         background: rgba(193, 101, 59, 0.85);
     }
+
+    #debug-box {
+        position: fixed;
+        right: 1em;
+        bottom: 1em;
+        z-index: 10;
+        padding: 0.6em 0.9em;
+        border-radius: 8px;
+        color: #fff;
+        background: rgba(20, 18, 16, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        font-family: monospace;
+        font-size: 0.85em;
+        line-height: 1.5;
+        backdrop-filter: blur(4px);
+        white-space: pre;
+    }
+
+    #debug-crosshair {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: 32px;
+        height: 32px;
+        pointer-events: none;
+    }
+
+    #debug-crosshair::before,
+    #debug-crosshair::after {
+        content: '';
+        position: absolute;
+        background: rgba(255, 60, 60, 0.85);
+    }
+
+    #debug-crosshair::before {
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        transform: translateX(-50%);
+    }
+
+    #debug-crosshair::after {
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        transform: translateY(-50%);
+    }
 </style>
 </head>
 <body>
@@ -63,7 +114,11 @@
         <a href="#" onclick="tourViewer.loadScene('camera-letto'); return false;">Camera da letto</a>
         <a href="#" onclick="tourViewer.loadScene('balcone-camera-letto'); return false;">Balcone camera da letto</a>
         <a href="#" onclick="tourViewer.loadScene('studio'); return false;">Studio</a>
+        <a href="#" onclick="tourViewer.loadScene('bagno'); return false;">Bagno</a>
     </div>
+
+    <div id="debug-box" style="display: none;"></div>
+    <div id="debug-crosshair" style="display: none;"></div>
 
     <script>
         var tourViewer = pannellum.viewer('tour', {
@@ -119,14 +174,38 @@
                             type: 'scene',
                             sceneId: 'studio',
                             text: 'Studio'
+                        },
+                        {
+                            pitch: 0,
+                            yaw: -89.15612988531626,
+                            type: 'scene',
+                            sceneId: 'bagno',
+                            text: 'Bagno'
+                        }
+                    ]
+                },
+                bagno: {
+                    type: 'equirectangular',
+                    panorama: '../FOTO/ROOMS/BAGNO/PANORAMA/compose_video_1787931419127.JPG',
+                    yaw: -95.59702182240011,
+                    pitch: -8.200613528474388,
+                    hfov: 120,
+                    hotSpots: [
+                        {
+                            pitch: 0,
+                            yaw: 80.86911247427702,
+                            type: 'scene',
+                            sceneId: 'corridoio',
+                            text: 'Corridoio'
                         }
                     ]
                 },
                 studio: {
                     type: 'equirectangular',
                     panorama: '../FOTO/ROOMS/STUDIO/PANORAMA/compose_video_1787398914704.JPG',
-                    yaw: -165.32518171767583,
-                    pitch: -14,
+                    yaw: -132.6956381213763,
+                    pitch: -18.044250454862812,
+                    hfov: 120,
                     hotSpots: [
                         {
                             pitch: 0,
@@ -188,6 +267,18 @@
                 }
             }
         });
+
+        if (window.location.hash === '#debug') {
+            var debugBox = document.getElementById('debug-box');
+            debugBox.style.display = 'block';
+            document.getElementById('debug-crosshair').style.display = 'block';
+            setInterval(function () {
+                debugBox.textContent =
+                    'yaw: ' + tourViewer.getYaw() +
+                    '\npitch: ' + tourViewer.getPitch() +
+                    '\nhfov: ' + tourViewer.getHfov();
+            }, 200);
+        }
     </script>
 </body>
 

@@ -518,8 +518,8 @@
                 <div class="mosaic-item" onclick="openLightbox(8)"><img src="dist/thumbnails/MOSAIC/CAMERA_DA_LETTO/compose_video_1787129244158.JPG" alt="Balcone della camera da letto con tenda da sole" /></div>
                 <div class="mosaic-item" onclick="openLightbox(9)"><img src="dist/thumbnails/MOSAIC/STUDIO/compose_video_1787398863069.JPG" alt="Studio con scrivania, divano letto e finestra" /></div>
                 <div class="mosaic-item" onclick="openLightbox(10)"><img src="dist/thumbnails/MOSAIC/STUDIO/compose_video_1787398892337.JPG" alt="Studio arredato con chitarre a parete, scrivania e divano letto" /></div>
-                <div class="mosaic-item" onclick="openLightbox(11)"><img src="dist/thumbnails/MOSAIC/BAGNO/compose_video_1787401301884.JPG" alt="Bagno con mobile lavabo sospeso e specchio contenitore" /></div>
-                <div class="mosaic-item" onclick="openLightbox(12)"><img src="dist/thumbnails/MOSAIC/BAGNO/compose_video_1787401351917.JPG" alt="Bagno finestrato con doccia, sanitari e bidet" /></div>
+                <div class="mosaic-item" onclick="openLightbox(11)"><img src="dist/thumbnails/MOSAIC/BAGNO/compose_video_1787931360632.JPG" alt="Bagno con mobile lavabo sospeso e specchio contenitore" /></div>
+                <div class="mosaic-item" onclick="openLightbox(12)"><img src="dist/thumbnails/MOSAIC/BAGNO/compose_video_1787931393798.JPG" alt="Bagno finestrato con doccia, sanitari e bidet" /></div>
                 <div class="mosaic-item" onclick="openLightbox(13)"><img src="dist/thumbnails/MOSAIC/CANTINA/compose_video_1787575263855.JPG" alt="Cantina con spazio per biciclette, sci e attrezzatura sportiva" /></div>
                 <div class="mosaic-item" onclick="openLightbox(14)"><img src="dist/thumbnails/MOSAIC/GARAGE/compose_video_1787575222377.JPG" alt="Box auto con scaffalature e banco da lavoro" /></div>
                 <div class="mosaic-item" onclick="openLightbox(15)"><img src="dist/thumbnails/MOSAIC/ESTERNO/IMG_20260824_143244466_HDR.jpg" alt="Facciata del condominio anni '70 con balconi" /></div>
@@ -541,6 +541,7 @@
                 <a href="#" onclick="tourViewer.loadScene('camera-letto'); return false;">Camera da letto</a>
                 <a href="#" onclick="tourViewer.loadScene('balcone-camera-letto'); return false;">Balcone camera da letto</a>
                 <a href="#" onclick="tourViewer.loadScene('studio'); return false;">Studio</a>
+                <a href="#" onclick="tourViewer.loadScene('bagno'); return false;">Bagno</a>
             </div>
             <div class="scene-links">
                 <a href="virtual-tour/">Apri a schermo intero</a>
@@ -577,8 +578,8 @@
             'dist/thumbnails/CAROSELLO/CAMERA_DA_LETTO/compose_video_1787129244158.JPG',
             'dist/thumbnails/CAROSELLO/STUDIO/compose_video_1787398863069.JPG',
             'dist/thumbnails/CAROSELLO/STUDIO/compose_video_1787398892337.JPG',
-            'dist/thumbnails/CAROSELLO/BAGNO/compose_video_1787401301884.JPG',
-            'dist/thumbnails/CAROSELLO/BAGNO/compose_video_1787401351917.JPG',
+            'dist/thumbnails/CAROSELLO/BAGNO/compose_video_1787931360632.JPG',
+            'dist/thumbnails/CAROSELLO/BAGNO/compose_video_1787931393798.JPG',
             'dist/thumbnails/CAROSELLO/CANTINA/compose_video_1787575263855.JPG',
             'dist/thumbnails/CAROSELLO/GARAGE/compose_video_1787575222377.JPG',
             'dist/thumbnails/CAROSELLO/ESTERNO/IMG_20260824_143244466_HDR.jpg',
@@ -698,14 +699,38 @@
                             type: 'scene',
                             sceneId: 'studio',
                             text: 'Studio',
+                        },
+                        {
+                            pitch: 0,
+                            yaw: -89.15612988531626,
+                            type: 'scene',
+                            sceneId: 'bagno',
+                            text: 'Bagno',
+                        }
+                    ]
+                },
+                bagno: {
+                    type: 'equirectangular',
+                    panorama: 'FOTO/ROOMS/BAGNO/PANORAMA/compose_video_1787931419127.JPG',
+                    yaw: -95.59702182240011,
+                    pitch: -8.200613528474388,
+                    hfov: 120,
+                    hotSpots: [
+                        {
+                            pitch: 0,
+                            yaw: 80.86911247427702,
+                            type: 'scene',
+                            sceneId: 'corridoio',
+                            text: 'Corridoio',
                         }
                     ]
                 },
                 studio: {
                     type: 'equirectangular',
                     panorama: 'FOTO/ROOMS/STUDIO/PANORAMA/compose_video_1787398914704.JPG',
-                    yaw: -165.32518171767583,
-                    pitch: -14,
+                    yaw: -132.6956381213763,
+                    pitch: -18.044250454862812,
+                    hfov: 120,
                     hotSpots: [
                         {
                             pitch: 0,
